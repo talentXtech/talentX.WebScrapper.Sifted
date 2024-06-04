@@ -7,5 +7,5 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = talentX.WebScrapper.Sifted.Utils
-build_property.ProjectDir = C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Utils\
+build_property.RootNamespace = talentX.WebScrapper.Sifted.Entities
+build_property.ProjectDir = C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Entities\

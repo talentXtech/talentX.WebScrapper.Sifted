@@ -147,11 +147,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Abinaya\\Desktop\\talentX.WebScrap\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Utils\\talentX.WebScrapper.Sifted.Utils.csproj",
+      "projectUniqueName": "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Utils\\talentX.WebScrapper.Sifted.Utils.csproj",
       "projectName": "talentX.WebScrapper.Sifted.Utils",
-      "projectPath": "C:\\Users\\Abinaya\\Desktop\\talentX.WebScrap\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Utils\\talentX.WebScrapper.Sifted.Utils.csproj",
+      "projectPath": "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Utils\\talentX.WebScrapper.Sifted.Utils.csproj",
       "packagesPath": "C:\\Users\\Abinaya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Abinaya\\Desktop\\talentX.WebScrap\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Utils\\obj\\",
+      "outputPath": "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Utils\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Abinaya\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -168,8 +168,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Abinaya\\Desktop\\talentX.WebScrap\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Extensions\\talentX.WebScrapper.Sifted.Extensions.csproj": {
-              "projectPath": "C:\\Users\\Abinaya\\Desktop\\talentX.WebScrap\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Extensions\\talentX.WebScrapper.Sifted.Extensions.csproj"
+            "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Extensions\\talentX.WebScrapper.Sifted.Extensions.csproj": {
+              "projectPath": "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Extensions\\talentX.WebScrapper.Sifted.Extensions.csproj"
             }
           }
         }

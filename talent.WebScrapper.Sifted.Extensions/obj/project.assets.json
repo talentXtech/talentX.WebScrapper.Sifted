@@ -127,11 +127,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Abinaya\\Desktop\\talentX.WebScrap\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Extensions\\talentX.WebScrapper.Sifted.Extensions.csproj",
+      "projectUniqueName": "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Extensions\\talentX.WebScrapper.Sifted.Extensions.csproj",
       "projectName": "talentX.WebScrapper.Sifted.Extensions",
-      "projectPath": "C:\\Users\\Abinaya\\Desktop\\talentX.WebScrap\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Extensions\\talentX.WebScrapper.Sifted.Extensions.csproj",
+      "projectPath": "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Extensions\\talentX.WebScrapper.Sifted.Extensions.csproj",
       "packagesPath": "C:\\Users\\Abinaya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Abinaya\\Desktop\\talentX.WebScrap\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Extensions\\obj\\",
+      "outputPath": "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Extensions\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Abinaya\\AppData\\Roaming\\NuGet\\NuGet.Config",

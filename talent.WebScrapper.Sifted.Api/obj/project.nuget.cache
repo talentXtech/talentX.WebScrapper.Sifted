@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UU8hw0LibYok4NpIdBo5ugCLuGdcgOIv55lDT4LWOnWLw7rMp3HeFqBEJ/3yr8m2q/X44Uq8odDKu9O1xrKexg==",
+  "dgSpecHash": "lg8Q/v+sksBOjHjMkb5tkUAboLgqeI6M9jZUFRQGXBx2Zw5SQlr6izZwUMAk6UhAIwnYPX5cyrt9jv+24+pMjA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Abinaya\\Desktop\\talentX.WebScrap\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Api\\talentX.WebScrapper.Sifted.Api.csproj",
+  "projectFilePath": "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Api\\talentX.WebScrapper.Sifted.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Abinaya\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Abinaya\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
