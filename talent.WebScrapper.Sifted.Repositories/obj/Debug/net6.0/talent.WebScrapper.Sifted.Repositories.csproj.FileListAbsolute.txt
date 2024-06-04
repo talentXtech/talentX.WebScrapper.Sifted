@@ -1,0 +1,17 @@
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\bin\Debug\net6.0\talent.WebScrapper.Sifted.Repositories.deps.json
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\bin\Debug\net6.0\talent.WebScrapper.Sifted.Repositories.runtimeconfig.json
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\bin\Debug\net6.0\talent.WebScrapper.Sifted.Repositories.dll
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\bin\Debug\net6.0\talent.WebScrapper.Sifted.Repositories.pdb
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\bin\Debug\net6.0\talent.WebScrapper.Sifted.Entities.dll
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\bin\Debug\net6.0\talent.WebScrapper.Sifted.Entities.pdb
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\obj\Debug\net6.0\talent.WebScrapper.Sifted.Repositories.csproj.AssemblyReference.cache
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\obj\Debug\net6.0\talent.WebScrapper.Sifted.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\obj\Debug\net6.0\talent.WebScrapper.Sifted.Repositories.AssemblyInfoInputs.cache
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\obj\Debug\net6.0\talent.WebScrapper.Sifted.Repositories.AssemblyInfo.cs
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\obj\Debug\net6.0\talent.WebScrapper.Sifted.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\obj\Debug\net6.0\talent.WebScrapper.Sifted.Repositories.csproj.CopyComplete
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\obj\Debug\net6.0\talent.WebScrapper.Sifted.Repositories.dll
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\obj\Debug\net6.0\refint\talent.WebScrapper.Sifted.Repositories.dll
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\obj\Debug\net6.0\talent.WebScrapper.Sifted.Repositories.pdb
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\obj\Debug\net6.0\talent.WebScrapper.Sifted.Repositories.genruntimeconfig.cache
+C:\Users\Abinaya\Desktop\talentX.WebScrap\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Repositories\obj\Debug\net6.0\ref\talent.WebScrapper.Sifted.Repositories.dll
