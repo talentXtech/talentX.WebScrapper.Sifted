@@ -120,14 +120,28 @@ namespace talentX.WebScrapper.Sifted.Extensions
 
         public static IWebElement FindElementById(this ChromeDriver driver, string id)
         {
-            var element = driver.FindElement(By.Id(id));
-            return element;
+            try
+            {
+                var element = driver.FindElement(By.Id(id));
+                return element;
+
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public static IWebElement FIndElementByXPath(this ChromeDriver driver, string xpath)
         {
-            var element = driver.FindElement(By.XPath(xpath));
-            return element;
+
+            var element = driver.FindElements(By.XPath(xpath));
+            if (element.Count > 0)
+            {
+                return element[0];
+            }
+            return null;
+
         }
 
 
@@ -143,8 +157,12 @@ namespace talentX.WebScrapper.Sifted.Extensions
 
         public static ReadOnlyCollection<IWebElement> FindAllByTag(this IWebElement parentElement, string tag)
         {
-            var elements = parentElement.FindElements(By.TagName(tag));
-            return elements;
+            if (parentElement != null)
+            {
+                var elements = parentElement.FindElements(By.TagName(tag));
+                return elements;
+            }
+            return null;
         }
 
         public static ReadOnlyCollection<IWebElement> FindAllByClass(this IWebElement parentElement, string className)

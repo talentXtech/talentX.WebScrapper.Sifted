@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lg8Q/v+sksBOjHjMkb5tkUAboLgqeI6M9jZUFRQGXBx2Zw5SQlr6izZwUMAk6UhAIwnYPX5cyrt9jv+24+pMjA==",
+  "dgSpecHash": "AGB3QwXRbkDl58bv3Fn7hpL/A5xw8++CIlC5NXdoesxm4jcwWPotkl7VFdoBEoXe9a9gIi7/4V6X4gohoLlp6A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Api\\talentX.WebScrapper.Sifted.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Abinaya\\.nuget\\packages\\csvhelper\\32.0.3\\csvhelper.32.0.3.nupkg.sha512",
     "C:\\Users\\Abinaya\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Abinaya\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Abinaya\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.7\\microsoft.data.sqlclient.2.1.7.nupkg.sha512",

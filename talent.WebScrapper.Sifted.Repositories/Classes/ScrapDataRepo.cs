@@ -115,12 +115,25 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
         }
 
-        public async Task<List<DetailedScrapOutputData>> FindRangeDetailedScrapDataAsync()
+        public async Task<List<DetailedScrapOutputData>> FindRangeDetailedScrapDataAsync(string? sector = null)
         {
             try
             {
-                var list = await _context.DetailedScrapOutputDatas.ToListAsync();
-                return list;
+                if (sector == null)
+                {
+                    var list = await _context.DetailedScrapOutputDatas.ToListAsync();
+                    return list;
+                }
+                else if (_context.DetailedScrapOutputDatas.Any(o => o.Sector == sector))
+                {
+                    var list = await _context.DetailedScrapOutputDatas.Where(x => x.Sector == sector).ToListAsync();
+                    return list;
+                }
+                else
+                {
+                    return null;
+                }
+               
             }
             catch (Exception ex)
             {

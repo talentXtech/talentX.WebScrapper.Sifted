@@ -80,3 +80,4 @@ C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sift
 C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Api\obj\Debug\net6.0\talentX.WebScrapper.Sifted.Api.pdb
 C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Api\obj\Debug\net6.0\talentX.WebScrapper.Sifted.Api.genruntimeconfig.cache
 C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Api\obj\Debug\net6.0\ref\talentX.WebScrapper.Sifted.Api.dll
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Api\bin\Debug\net6.0\CsvHelper.dll

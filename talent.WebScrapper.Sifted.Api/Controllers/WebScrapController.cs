@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CsvHelper;
+using Microsoft.AspNetCore.Mvc;
 using OpenQA.Selenium.Chrome;
+using System.Formats.Asn1;
+using System.Globalization;
 using talentX.WebScrapper.Sifted.Entities;
 using talentX.WebScrapper.Sifted.Extensions;
 using talentX.WebScrapper.Sifted.Repositories.Contracts;
@@ -93,14 +96,36 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
                     ChromeDriverUtils.ScrollToBottmOfPage(driver);
                     var TagsParentElement = driver.FIndElementByXPath("//*[@id=\"__next\"]/main/div/div[2]/div[3]");
 
-                    var tagElements = TagsParentElement.FindAllByTag("a");
-                    var tagList = new List<string>();
-                    foreach (var item in tagElements)
+                    string tags;
+
+                    if (TagsParentElement == null)
                     {
-                        var tag = item.FindElementTextFromParentBySelector("span > span:nth-child(2)");
-                        tagList.Add(tag);
+                        tags = "";
+                    } else
+                    {
+                        var tagElements = TagsParentElement.FindAllByTag("a");
+                        
+
+                        if (tagElements == null)
+                        {
+                            tags = "";
+                        }
+                        else
+                        {
+                            var tagList = new List<string>();
+                            foreach (var item in tagElements)
+                            {
+                                
+                                var tag = item.FindElementTextFromParentBySelector("span > span:nth-child(2)");
+                                tagList.Add(tag);
+                            }
+                            tags = string.Join('|', tagList.Select((x) => x).ToArray());
+
+                        }
                     }
-                    var tags = string.Join('|', tagList.Select((x) => x).ToArray());
+                    
+
+
 
                     var scrapInfoFromArticle = new DetailedScrapOutputData
                     {
@@ -130,6 +155,30 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
                 driver.Quit();
             }
 
+        }
+
+        [HttpGet("GetScrapInfoAsCSV")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [Produces("text/csv")]
+        public async Task<IActionResult> GetScrapInfoAsCSV(string? sector = null)
+        {
+            var data = await _scrapDataRepo.FindRangeDetailedScrapDataAsync(sector);
+
+            if (data == null)
+            {
+                return BadRequest("Provide a valid Sector name");
+            }
+
+            using (var memoryStream = new MemoryStream())
+            {
+                using (StreamWriter streamWriter = new(memoryStream))
+                using (CsvWriter csvWriter = new(streamWriter, CultureInfo.InvariantCulture))
+                {
+                    csvWriter.WriteRecords(data);
+                }
+
+                return File(memoryStream.ToArray(), "text/csv", $"Sifted-{sector}{DateTime.Now.ToString("s")}.csv");
+            }
         }
 
         private async Task ScrapSectorWiseArticleUrls(ChromeDriver driver)

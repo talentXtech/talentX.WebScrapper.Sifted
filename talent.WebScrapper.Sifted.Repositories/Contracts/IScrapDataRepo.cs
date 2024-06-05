@@ -11,7 +11,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Contracts
         Task AddDetailedScrapDataAsync(DetailedScrapOutputData outputData);
         Task AddRangeDetailedScrapDataAsync(List<DetailedScrapOutputData> outputDatas);
         Task DeleteDetailedScrapDataAsync();
-        Task<List<DetailedScrapOutputData>> FindRangeDetailedScrapDataAsync();
+        Task<List<DetailedScrapOutputData>> FindRangeDetailedScrapDataAsync(string? sector);
         List<string> ListOfurlsNotExistingInDb(List<string> outputDatas);
 
         List<SectorWiseArticles> FindSectorWiseArticleUrls(string? sector);
