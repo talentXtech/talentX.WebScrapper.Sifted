@@ -22,7 +22,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
         }
 
         [HttpGet("SiftedScrapInfo")]
-        public async Task<ActionResult<List<InitialScrapOutputData>>> SiftedScrapInfo(string email = "abi1243@gmail.com", string password = "Sifted1234!")
+        public async Task<ActionResult> SiftedScrapInfo(string email = "abi1243@gmail.com", string password = "Sifted1234!")
         {
             var ListOfInitialScrapDataFromSifted = new List<InitialScrapOutputData>();
             var driver = ChromeDriverUtils.CreateChromeDriver("https://sifted.eu/sectors");
@@ -46,7 +46,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
                 await ScrapSectorWiseArticleUrls(driver);
 
 
-                return Ok(ListOfInitialScrapDataFromSifted);
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -178,6 +178,38 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
                 }
 
                 return File(memoryStream.ToArray(), "text/csv", $"Sifted-{sector}{DateTime.Now.ToString("s")}.csv");
+            }
+        }
+
+        [HttpDelete("DeleteInitialScrapOutputData")]
+        public async Task<IActionResult> DeleteInitialScrapOutputData()
+        {
+            try
+            {
+                await _scrapDataRepo.DeleteInitialScrapDataAsync();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return BadRequest(ex.Message);
+
+            }
+        }
+
+        [HttpDelete("DeleteDetailedScrapOutputData")]
+        public async Task<IActionResult> DeleteDetailedScrapOutputData()
+        {
+            try
+            {
+                await _scrapDataRepo.DeleteDetailedScrapDataAsync();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return BadRequest(ex.Message);
+
             }
         }
 
