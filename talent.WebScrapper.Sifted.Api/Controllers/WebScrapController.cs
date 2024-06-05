@@ -19,10 +19,9 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
         }
 
         [HttpGet("SiftedScrapInfo")]
-        public async Task<ActionResult<List<DetailedScrapOutputData>>> SiftedScrapInfo(string email = "abi1243@gmail.com", string password = "Sifted1234!")
+        public async Task<ActionResult<List<InitialScrapOutputData>>> SiftedScrapInfo(string email = "abi1243@gmail.com", string password = "Sifted1234!")
         {
             var ListOfInitialScrapDataFromSifted = new List<InitialScrapOutputData>();
-            var ListOfFinalScrappedDataFromSifted = new List<DetailedScrapOutputData>();
             var driver = ChromeDriverUtils.CreateChromeDriver("https://sifted.eu/sectors");
             try
             {
@@ -30,9 +29,6 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
 
                 Thread.Sleep(2000);
                 ChromeDriverUtils.CloseComplainaceOverlay(driver);
-
-                driver.ClickButtonByClass("ga-nav-link-login");
-                Thread.Sleep(2000);
 
                 ChromeDriverUtils.UserLogin(driver, email, password);
 
@@ -72,19 +68,12 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
                 Thread.Sleep(2000);
                 ChromeDriverUtils.CloseComplainaceOverlay(driver);
 
-                driver.ClickButtonByClass("ga-nav-link-login");
-                Thread.Sleep(2000);
-
                 ChromeDriverUtils.UserLogin(driver, email, password);
 
                 Thread.Sleep(5000);
                 ChromeDriverUtils.CloseComplainaceOverlay(driver);
 
-                ChromeDriverUtils.ScrollToBottmOfPage(driver);
-                Thread.Sleep(2000);
-
                 var articleData = _scrapDataRepo.FindSectorWiseArticleUrls(sector);
-
 
 
                 foreach (var data in articleData)
@@ -126,9 +115,9 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
                     };
                     ListOfFinalScrappedDataFromSifted.Add(scrapInfoFromArticle);
 
-                    await _scrapDataRepo.AddRangeDetailedScrapDataAsync(ListOfFinalScrappedDataFromSifted);
-
                 }
+                await _scrapDataRepo.AddRangeDetailedScrapDataAsync(ListOfFinalScrappedDataFromSifted);
+
                 return Ok();
             }
             catch (Exception ex)

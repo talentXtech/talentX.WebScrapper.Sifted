@@ -1,0 +1,11 @@
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Entities\bin\Debug\net6.0\talentX.WebScrapper.Sifted.Entities.deps.json
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Entities\bin\Debug\net6.0\talentX.WebScrapper.Sifted.Entities.dll
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Entities\bin\Debug\net6.0\talentX.WebScrapper.Sifted.Entities.pdb
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Entities\obj\Debug\net6.0\talentX.WebScrapper.Sifted.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Entities\obj\Debug\net6.0\talentX.WebScrapper.Sifted.Entities.AssemblyInfoInputs.cache
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Entities\obj\Debug\net6.0\talentX.WebScrapper.Sifted.Entities.AssemblyInfo.cs
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Entities\obj\Debug\net6.0\talentX.WebScrapper.Sifted.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Entities\obj\Debug\net6.0\talentX.WebScrapper.Sifted.Entities.dll
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Entities\obj\Debug\net6.0\refint\talentX.WebScrapper.Sifted.Entities.dll
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Entities\obj\Debug\net6.0\talentX.WebScrapper.Sifted.Entities.pdb
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Entities\obj\Debug\net6.0\ref\talentX.WebScrapper.Sifted.Entities.dll

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\talentX.WebScrapper.Sifted.Api.props" />
+</Project>

@@ -77,6 +77,9 @@ namespace talentX.WebScrapper.Sifted.Utils
 
         public static void UserLogin(ChromeDriver driver, string email, string password)
         {
+            driver.ClickButtonByClass("ga-nav-link-login");
+            Thread.Sleep(2000);
+
             var loginEmailInput = driver.FindElement(By.Id("email"));
             CloseComplainaceOverlay(driver);
             loginEmailInput.Clear();
