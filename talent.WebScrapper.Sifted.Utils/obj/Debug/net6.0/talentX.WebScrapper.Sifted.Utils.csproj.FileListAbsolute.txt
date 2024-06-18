@@ -16,3 +16,5 @@ C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sift
 C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Utils\obj\Debug\net6.0\refint\talentX.WebScrapper.Sifted.Utils.dll
 C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Utils\obj\Debug\net6.0\talentX.WebScrapper.Sifted.Utils.pdb
 C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Utils\obj\Debug\net6.0\ref\talentX.WebScrapper.Sifted.Utils.dll
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Utils\bin\Debug\net6.0\talentX.WebScrapper.Sifted.Entities.dll
+C:\Users\Abinaya\Desktop\talentX_networkCurationProject\talentX.WebScrapper.Sifted\talent.WebScrapper.Sifted.Utils\bin\Debug\net6.0\talentX.WebScrapper.Sifted.Entities.pdb

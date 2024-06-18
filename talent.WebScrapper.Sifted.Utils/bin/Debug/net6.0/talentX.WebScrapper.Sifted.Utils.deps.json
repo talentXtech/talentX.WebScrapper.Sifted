@@ -10,6 +10,7 @@
         "dependencies": {
           "Selenium.Support": "4.21.0",
           "Selenium.WebDriver": "4.21.0",
+          "talentX.WebScrapper.Sifted.Entities": "1.0.0",
           "talentX.WebScrapper.Sifted.Extensions": "1.0.0"
         },
         "runtime": {
@@ -44,6 +45,11 @@
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.0.0.0"
           }
+        }
+      },
+      "talentX.WebScrapper.Sifted.Entities/1.0.0": {
+        "runtime": {
+          "talentX.WebScrapper.Sifted.Entities.dll": {}
         }
       },
       "talentX.WebScrapper.Sifted.Extensions/1.0.0": {
@@ -83,6 +89,11 @@
       "sha512": "sha512-3xIx4CJunIoLEOROfDKILIzf76WfphTpQJYE98stG1GBVBKhFO5E6wXNfCqdiWt34iNlckcDr3z+qCD+RPfuUQ==",
       "path": "selenium.webdriver/4.21.0",
       "hashPath": "selenium.webdriver.4.21.0.nupkg.sha512"
+    },
+    "talentX.WebScrapper.Sifted.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "talentX.WebScrapper.Sifted.Extensions/1.0.0": {
       "type": "project",

@@ -115,25 +115,12 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
         }
 
-        public async Task<List<DetailedScrapOutputData>> FindRangeDetailedScrapDataAsync(string? sector = null)
+        public async Task DeleteSectorTableScrapDataAsync()
         {
             try
             {
-                if (sector == null)
-                {
-                    var list = await _context.DetailedScrapOutputDatas.ToListAsync();
-                    return list;
-                }
-                else if (_context.DetailedScrapOutputDatas.Any(o => o.Sector == sector))
-                {
-                    var list = await _context.DetailedScrapOutputDatas.Where(x => x.Sector == sector).ToListAsync();
-                    return list;
-                }
-                else
-                {
-                    return null;
-                }
-               
+                _context.Database.ExecuteSqlRaw("TRUNCATE TABLE SectorWiseArticles");
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -143,14 +130,82 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
 
         }
 
-        public List<string> ListOfurlsNotExistingInDb(List<string> outputDatas)
+        public async Task DeleteInitialScrapDataBySectorAsync(string sector)
         {
             try
             {
-                List<string> filteredUrls = new();
+                var listOfDataToDelete = await _context.InitialScrapOutputDatas.Where(x => x.Sectors == sector).ToListAsync();
+                _context.InitialScrapOutputDatas.RemoveRange(listOfDataToDelete);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+
+        }
+        public async Task DeleteDetailedScrapDataBySectorAsync(string sector)
+        {
+            try
+            {
+                var listOfDataToDelete = await _context.DetailedScrapOutputDatas.Where(x => x.Sector == sector).ToListAsync();
+                _context.DetailedScrapOutputDatas.RemoveRange(listOfDataToDelete);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+
+        }
+        public async Task DeleteSectorTableScrapDataBySectorAsync(string sector)
+        {
+            try
+            {
+                var listOfDataToDelete = await _context.SectorWiseArticles.Where(x => x.Sectors == sector).ToListAsync();
+                _context.SectorWiseArticles.RemoveRange(listOfDataToDelete);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
+        public async Task<List<DetailedScrapOutputData>> FindRangeDetailedScrapDataAsync()
+        {
+            try
+            {
+                    var list = await _context.DetailedScrapOutputDatas.ToListAsync();
+                    return list;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+
+        }
+
+        public async Task<List<DetailedScrapOutputData>> FindRangeDetailedScrapDataBySectorAsync(string sector)
+        {
+                var list = await _context.DetailedScrapOutputDatas.Where(x => x.Sector == sector).ToListAsync();
+                return list;
+
+        }
+
+        public List<SectorWiseArticles> ListOfurlsNotExistingInDb(List<SectorWiseArticles> outputDatas)
+        {
+            try
+            {
+                List<SectorWiseArticles> filteredUrls = new();
                 foreach (var item in outputDatas)
                 {
-                    if (!_context.DetailedScrapOutputDatas.Any(o => o.articleUrl == item))
+                    if (!_context.DetailedScrapOutputDatas.Any(o => o.articleUrl == item.ArticleUrl))
                     {
                         filteredUrls.Add(item);
                     }
@@ -165,12 +220,33 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
 
         }
-        public List<SectorWiseArticles> FindSectorWiseArticleUrls(string? sector)
+
+        public List<string> ListOfurlsNotExistingInSectorWiseArticleList(List<string> outputDatas)
         {
             try
             {
-                if (sector == null)
+                List<string> filteredUrls = new();
+                foreach (var item in outputDatas)
                 {
+                    if (!_context.SectorWiseArticles.Any(o => o.ArticleUrl == item))
+                    {
+                        filteredUrls.Add(item);
+                    }
+
+                }
+                return filteredUrls;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+
+        }
+        public List<SectorWiseArticles> FindSectorWiseArticleUrls()
+        {
+            try
+            {
                     var list = _context.SectorWiseArticles.ToList();
                     List<SectorWiseArticles> filteredList = new();
                     foreach (var item in list)
@@ -181,21 +257,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
                         }
                     }
                     return filteredList;
-                }
-                else
-                {
-                    var list = _context.SectorWiseArticles.Where(o => o.Sectors == sector).ToList();
-                    List<SectorWiseArticles> filteredList = new();
-                    foreach (var item in list)
-                    {
-                        if (!_context.DetailedScrapOutputDatas.Any(o => o.articleUrl == item.ArticleUrl))
-                        {
-                            filteredList.Add(item);
-                        }
-                    }
-                    return filteredList;
-                }
-                
+               
             }
             catch (Exception ex)
             {
@@ -203,6 +265,30 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
                 throw;
             }
         }
+
+        public List<SectorWiseArticles> FindSectorWiseArticleUrlsBasedOnSector(string sector)
+        {
+            try
+            {
+                var list = _context.SectorWiseArticles.Where(o => o.Sectors == sector).ToList();
+                List<SectorWiseArticles> filteredList = new();
+                foreach (var item in list)
+                {
+                    if (!_context.DetailedScrapOutputDatas.Any(o => o.articleUrl == item.ArticleUrl))
+                    {
+                        filteredList.Add(item);
+                    }
+                }
+                return filteredList;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
 
         public List<InitialScrapOutputData> FindInitialScrapOutputData()
         {
@@ -217,6 +303,18 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
                 Console.WriteLine(ex.Message);
                 throw;
             }
+        }
+
+        public async Task<List<string>> GetFiltersByCategory()
+        {
+            var categories = await _context.SectorWiseArticles.Select(p => p.Sectors).Distinct().ToListAsync();
+            return categories;
+        }
+
+        public async Task<List<string>> GetListOfSectorsToDownloadDataByCategory()
+        {
+            var categories = await _context.DetailedScrapOutputDatas.Select(p => p.Sector).Distinct().ToListAsync();
+            return categories;
         }
     }
 }

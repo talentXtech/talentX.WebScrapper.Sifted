@@ -976,6 +976,7 @@
         "dependencies": {
           "Selenium.Support": "4.21.0",
           "Selenium.WebDriver": "4.21.0",
+          "talentX.WebScrapper.Sifted.Entities": "1.0.0",
           "talentX.WebScrapper.Sifted.Extensions": "1.0.0"
         },
         "compile": {

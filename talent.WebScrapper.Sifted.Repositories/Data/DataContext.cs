@@ -13,5 +13,6 @@ namespace talentX.WebScrapper.Sifted.Repositories.Data
         public DbSet<InitialScrapOutputData> InitialScrapOutputDatas { get; set; }
 
         public DbSet<SectorWiseArticles> SectorWiseArticles { get; set; }
+
     }
 }

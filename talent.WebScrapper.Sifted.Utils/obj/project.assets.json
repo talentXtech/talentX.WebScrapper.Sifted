@@ -50,6 +50,16 @@
           "buildTransitive/Selenium.WebDriver.targets": {}
         }
       },
+      "talentX.WebScrapper.Sifted.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/talentX.WebScrapper.Sifted.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/talentX.WebScrapper.Sifted.Entities.dll": {}
+        }
+      },
       "talentX.WebScrapper.Sifted.Extensions/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -128,6 +138,11 @@
         "selenium.webdriver.nuspec"
       ]
     },
+    "talentX.WebScrapper.Sifted.Entities/1.0.0": {
+      "type": "project",
+      "path": "../talent.WebScrapper.Sifted.Entities/talentX.WebScrapper.Sifted.Entities.csproj",
+      "msbuildProject": "../talent.WebScrapper.Sifted.Entities/talentX.WebScrapper.Sifted.Entities.csproj"
+    },
     "talentX.WebScrapper.Sifted.Extensions/1.0.0": {
       "type": "project",
       "path": "../talent.WebScrapper.Sifted.Extensions/talentX.WebScrapper.Sifted.Extensions.csproj",
@@ -138,6 +153,7 @@
     "net6.0": [
       "Selenium.Support >= 4.21.0",
       "Selenium.WebDriver >= 4.21.0",
+      "talentX.WebScrapper.Sifted.Entities >= 1.0.0",
       "talentX.WebScrapper.Sifted.Extensions >= 1.0.0"
     ]
   },
@@ -168,6 +184,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Entities\\talentX.WebScrapper.Sifted.Entities.csproj": {
+              "projectPath": "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Entities\\talentX.WebScrapper.Sifted.Entities.csproj"
+            },
             "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Extensions\\talentX.WebScrapper.Sifted.Extensions.csproj": {
               "projectPath": "C:\\Users\\Abinaya\\Desktop\\talentX_networkCurationProject\\talentX.WebScrapper.Sifted\\talent.WebScrapper.Sifted.Extensions\\talentX.WebScrapper.Sifted.Extensions.csproj"
             }

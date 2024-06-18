@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\talent.WebScrapper.Sifted.Entities\talentX.WebScrapper.Sifted.Entities.csproj" />
     <ProjectReference Include="..\talent.WebScrapper.Sifted.Extensions\talentX.WebScrapper.Sifted.Extensions.csproj" />
   </ItemGroup>
 
