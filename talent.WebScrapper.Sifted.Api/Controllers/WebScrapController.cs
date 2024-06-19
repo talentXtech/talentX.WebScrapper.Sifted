@@ -68,7 +68,6 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
         public async Task<IActionResult> ScrapInfoFromEachArticleUrlBasedOnSector(string? sector = null)
         {
 
-            var ListOfFinalScrappedDataFromSifted = new List<DetailedScrapOutputData>();
             var driver = ChromeDriverUtils.CreateChromeDriver("https://sifted.eu/sectors");
             int noOfDataToBeScrapped = 0;
             int dataScrapped = 0;
@@ -87,7 +86,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
                 var filteredArticleData = _scrapDataRepo.ListOfurlsNotExistingInDb(articleData);
                 noOfDataToBeScrapped = filteredArticleData.Count;
 
-                dataScrapped = await ScrapDataFromEachArtcileUrl(ListOfFinalScrappedDataFromSifted, driver, filteredArticleData);
+                dataScrapped = await ScrapDataFromEachArtcileUrl( driver, filteredArticleData);
                 var apiResponse = ResponseUtils.GetSuccesfulResponse("Data Scrapped scuccesfully and is ready for download!");
                 return Ok(apiResponse);
             }
@@ -109,7 +108,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
         [HttpPost("ScrapAllDetailedScrapInfo")]
         public async Task<IActionResult> ScrapInfoFromEachArticleUrl()
         {
-            var ListOfFinalScrappedDataFromSifted = new List<DetailedScrapOutputData>();
+           
             var driver = ChromeDriverUtils.CreateChromeDriver("https://sifted.eu/sectors");
             int noOfDataToBeScrapped = 0;
             int dataScrapped = 0;
@@ -127,8 +126,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
                 var filteredArticleData = _scrapDataRepo.ListOfurlsNotExistingInDb(articleData);
                 noOfDataToBeScrapped = filteredArticleData.Count;
 
-                dataScrapped = await ScrapDataFromEachArtcileUrl(ListOfFinalScrappedDataFromSifted, driver, filteredArticleData);
-                await _scrapDataRepo.AddRangeDetailedScrapDataAsync(ListOfFinalScrappedDataFromSifted);
+                dataScrapped = await ScrapDataFromEachArtcileUrl( driver, filteredArticleData);
 
                 var apiResponse = ResponseUtils.GetSuccesfulResponse("Data Scrapped scuccesfully and is ready for download!");
                 return Ok(apiResponse);
@@ -337,7 +335,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
             await _scrapDataRepo.AddRangeInitialScrapDataAsync(ListOfInitialScrapDataFromSifted);
         }
 
-        private async Task<int> ScrapDataFromEachArtcileUrl(List<DetailedScrapOutputData> ListOfFinalScrappedDataFromSifted, ChromeDriver driver, List<SectorWiseArticles> filteredArticleData)
+        private async Task<int> ScrapDataFromEachArtcileUrl(ChromeDriver driver, List<SectorWiseArticles> filteredArticleData)
         {
             int noOfDataScrapped = 0;
             foreach (var data in filteredArticleData)
@@ -397,12 +395,12 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
                     articleUrl = data.ArticleUrl,
                     Tags = tags
                 };
-                ListOfFinalScrappedDataFromSifted.Add(scrapInfoFromArticle);
+                await _scrapDataRepo.AddDetailedScrapDataAsync(scrapInfoFromArticle);
                 noOfDataScrapped += 1;
 
             }
 
-            await _scrapDataRepo.AddRangeDetailedScrapDataAsync(ListOfFinalScrappedDataFromSifted);
+          //  await _scrapDataRepo.AddRangeDetailedScrapDataAsync(ListOfFinalScrappedDataFromSifted);
             return noOfDataScrapped;
         }
 
