@@ -14,5 +14,11 @@ namespace talentX.WebScrapper.Sifted.Repositories.Data
 
         public DbSet<SectorWiseArticles> SectorWiseArticles { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.HasDefaultSchema("sifted");
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlServer(x => x.MigrationsHistoryTable("__EFMigrationsHistory", "sifted"));
+
     }
 }

@@ -18,13 +18,15 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
         private readonly IConfiguration _config;
         private readonly string _email;
         private readonly string _password;
+        private readonly ILogger<WebScrapController> _logger;
 
-        public WebScrapController(IScrapDataRepo scrapDataRepo, IConfiguration config)
+        public WebScrapController(IScrapDataRepo scrapDataRepo, IConfiguration config, ILogger<WebScrapController> logger)
         {
             _scrapDataRepo = scrapDataRepo;
             _config = config;
             _email = _config.GetValue<string>("email");
             _password = _config.GetValue<string>("password");
+            _logger = logger;
         }
 
         [HttpPost("ScrapInitialInfo")]
@@ -55,7 +57,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message.ToString());
+                _logger.LogError(ex.Message, ex);
                 return BadRequest(ex.Message);
             }
             finally
@@ -92,7 +94,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message.ToString());
+                _logger.LogError(ex.Message, ex);
                 var responseMessage = dataScrapped + "/" + noOfDataToBeScrapped + "data scrapped successfully.Issues with Scrapping Data. Please try again for the rest!";
                 var apiResponse = ResponseUtils.GetBadRequestResponse(responseMessage);
                 return BadRequest(apiResponse);
@@ -133,7 +135,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message.ToString());
+                _logger.LogError(ex.Message, ex);
                 var responseMessage = dataScrapped + "/" + noOfDataToBeScrapped + "data scrapped successfully.Issues with Scrapping Data. Please try again for the rest!";
                 var apiResponse = ResponseUtils.GetBadRequestResponse(responseMessage);
                 return BadRequest(apiResponse);
@@ -158,7 +160,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 var apiResponse = ResponseUtils.GetBadRequestResponse(ex.Message);
                 return BadRequest(apiResponse);
             }
@@ -182,7 +184,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
                 return GenerateCSV(sector, data);
             } catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 var apiResponse = ResponseUtils.GetBadRequestResponse(ex.Message);
                 return BadRequest(apiResponse);
             }
@@ -203,7 +205,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 var apiResponse = ResponseUtils.GetBadRequestResponse(ex.Message);
                 return BadRequest(apiResponse);
             }
@@ -222,7 +224,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 var apiResponse = ResponseUtils.GetBadRequestResponse(ex.Message);
                 return BadRequest(apiResponse);
 
@@ -241,7 +243,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 var apiResponse = ResponseUtils.GetBadRequestResponse(ex.Message);
                 return BadRequest(apiResponse);
 
@@ -261,7 +263,7 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 var apiResponse = ResponseUtils.GetBadRequestResponse(ex.Message);
                 return BadRequest(apiResponse);
 
@@ -399,8 +401,6 @@ namespace talentX.WebScrapper.Sifted.Api.Controllers
                 noOfDataScrapped += 1;
 
             }
-
-          //  await _scrapDataRepo.AddRangeDetailedScrapDataAsync(ListOfFinalScrappedDataFromSifted);
             return noOfDataScrapped;
         }
 

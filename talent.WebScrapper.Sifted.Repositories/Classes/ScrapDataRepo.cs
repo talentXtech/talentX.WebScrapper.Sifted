@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using talentX.WebScrapper.Sifted.Entities;
 using talentX.WebScrapper.Sifted.Repositories.Contracts;
 using talentX.WebScrapper.Sifted.Repositories.Data;
@@ -8,11 +9,12 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
     public class ScrapDataRepo : IScrapDataRepo
     {
         private readonly DataContext _context;
+        private readonly ILogger<ScrapDataRepo> _logger;
 
-        public ScrapDataRepo(DataContext context)
+        public ScrapDataRepo(DataContext context, ILogger<ScrapDataRepo> logger)
         {
             _context = context;
-
+            _logger = logger;
         }
         public async Task AddRangeInitialScrapDataAsync(List<InitialScrapOutputData> outputDatas)
         {
@@ -32,7 +34,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
 
@@ -47,7 +49,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
 
@@ -62,7 +64,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
         }
@@ -80,7 +82,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
 
@@ -95,7 +97,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
 
@@ -110,7 +112,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
         }
@@ -124,7 +126,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
 
@@ -140,7 +142,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
 
@@ -155,7 +157,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
 
@@ -170,7 +172,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
         }
@@ -185,7 +187,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
 
@@ -215,7 +217,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
 
@@ -238,7 +240,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex, ex.Message);
                 throw;
             }
 
@@ -261,7 +263,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
         }
@@ -284,7 +286,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
         }
@@ -300,7 +302,7 @@ namespace talentX.WebScrapper.Sifted.Repositories.Classes
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message, ex);
                 throw;
             }
         }

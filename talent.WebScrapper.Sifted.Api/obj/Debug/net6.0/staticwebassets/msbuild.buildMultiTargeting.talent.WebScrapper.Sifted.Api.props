@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\talent.WebScrapper.Sifted.Api.props" />
-</Project>
